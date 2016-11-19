@@ -1,0 +1,256 @@
+.form__outercontainer {
+	background: #0c86e5 url(../images/bg-repeat-x.jpg) repeat-x;
+}
+.form__defaultpage {
+	background: #0c86e5 url(../images/bg.jpg) repeat-x;
+}
+
+
+
+/*__________________________________________________________
+
+						FONTS
+__________________________________________________________*/
+
+.form__defaultpage h1, 
+.form__pagetitle,
+.form__defaultpage h2, 
+.form__defaultpage h3{
+	color: #093603;
+}
+
+.form__defaultpage h1,
+.form__pagetitle {
+
+	font-size: 33px;
+	font-size: 3.3rem;
+
+	margin-bottom: 0.303em;
+	padding-bottom: 0.303em;
+}
+
+.form__defaultpage h2 {
+	font-size: 24px;
+	font-size: 2.4rem;
+	padding:0 0 20px 5px;
+
+}
+
+.form__defaultpage h3 {
+	font-size: 20px;
+	font-size: 2rem;
+}
+
+.form__pageheader h1,
+.form__pagetitle {
+	background:url(../images/border.gif) no-repeat 0 bottom;
+}
+
+.form__number {
+	font-size: 20px;
+	font-size: 2rem;
+	padding-top: 0.4em; /* 8px / 20px */
+	color:#fff;
+}
+
+.form__footer a {
+	margin-right:10px;
+	font-size: 11px;
+	font-size: 1.1rem;
+	text-transform:capitalize;
+	color:#395d7a !important;
+}
+
+.form__question,
+.form__pagedescription {
+    font-size: 17px;
+    font-size: 1.7rem;
+    line-height: 1.6;
+}
+
+
+
+
+.form__bg-theme {
+	max-width:1006px;
+	margin:0 auto;
+	background:url(../images/top-header.png) no-repeat 0 0;
+    padding: 0 15px;
+}
+
+.form__wrapper {
+	position: relative;
+	max-width: 932px;
+	margin:0 auto;
+}
+
+.form__container {
+    background: #fff;
+    border-radius: 20px;
+}
+
+.form__top {
+	padding-top: 73px;
+}
+
+.form__logo {
+    float: right;
+    position: relative;
+    display: table;
+    width: 308px;
+    height: 124px;
+    margin-right: 42px;
+    margin-top: 24px;
+    background: #fff;
+    border-radius: 10px 10px 0 0;
+}
+
+@media (max-width: 520px) {
+    .form__logo {
+        float: none;
+        margin: 24px auto 0;
+        width: 85%;
+    }
+}
+
+.form__logo-mid {
+	display:table-cell;
+	vertical-align:middle;
+}
+
+.form__logo-mid-a {
+	text-align:center;
+	display:block;
+    padding: 15px;
+}
+
+.form__logo img {
+	max-height: 124px;
+    max-width: 100%;
+}
+
+.form__pagination {
+	max-width: 520px;
+    width: 85%;
+	margin: 0 auto;
+    padding: 15px 0;
+	color: #4b1b1b;
+}
+
+.form__pagination span {
+	float: left;
+	color: #a8d1f6;
+}
+
+.form__progressbar {
+	float: none;
+    overflow: hidden;
+	margin: 0 0 0 5px;
+	border: 1px solid #b0cdeb;
+}
+
+.form__progress {
+	float:left;
+	height:8px;
+	background-color:#b0cdeb;
+}
+
+.form__pageheader {
+	padding: 20px 20px 20px 30px;
+}
+
+.form__report {
+	padding:5px;
+	text-align:center;
+}
+
+
+.form__surveyouter {
+	background-color:#fff;
+	padding: 0 6px 20px 7px;
+    clear: both;
+}
+
+.form__questioncontainer-list {
+}
+
+.form__questioncontainer {
+	padding: 20px;
+	border-bottom: 1px dotted #72b8f1;
+}
+
+.form__questiontitle {
+    padding: 3px 0 15px;
+}
+
+.form__number {
+	float:left;
+	display:block;
+	width: 40px;
+	height: 40px;
+	margin-right:10px;
+	text-align:center;
+	
+	line-height: 0.8;
+
+	background:url(../images/bg-no.png) no-repeat;
+    box-sizing: border-box;
+}
+
+.form__surveybutton {
+	width: 130px;
+	margin-right:5px;
+
+	text-align:center;
+	color:#252626;
+
+	font: bold 12px/16px Arial, Helvetica, sans-serif;
+	border:none;
+	cursor:pointer;
+}
+
+.form__action {
+	padding: 20px 25px 25px 0;
+	background-color:#fff;
+}
+
+.form__footer {
+	max-width:910px;
+	height: 140px;
+	margin:0 auto 10px;
+	padding-top:71px;
+	padding-bottom:10px;
+	text-align:center;
+	background:url(../images/bg-footer.png) no-repeat;
+    background-position: center center;
+}
+
+.form__content {
+	clear:right;
+}
+
+.form__footer div {
+    position: static;
+    line-height: normal;
+	max-width:550px;
+	display:inline-block;
+    background: none;
+}
+
+.form__footer a.last {
+	margin-right:0;
+}
+
+.form__footer a:hover {
+	text-decoration:underline;
+}
+
+
+@media (max-width: 650px) {
+    div.form__surveyouter {
+        padding: 0 10px !important;
+    }
+    .form__bg-theme {
+        padding: 0 5px;
+    }
+}
