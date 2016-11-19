@@ -20,6 +20,9 @@ public class Beacon {
        this.beaconId = beaconId; 
       
    } 
+   public String getBeaconId(){
+       return beaconId;
+   }
  
    
     public static void main(String[] args) {
@@ -63,17 +66,38 @@ public class Beacon {
     
     
     
-    
+    constructTree(reception, toilet, routes);
     
     
     
     }
     
     
-    public static ArrayList<Move> getRoute(Beacon start, Beacon destination){
-        
-        
-           
+    public static void constructTree(Beacon start, Beacon destination, ArrayList<BeaconToBeacon> routes){
+        //Construct Tree 
+        Node rootNode = new Node(start);
+        for(int i = 0; i < routes.size(); i++){
+            BeaconToBeacon b2b =  routes.get(i);
+            Beacon sStart = b2b.getStart(); 
+            if(start.equals(sStart)){
+               Beacon sEnd = b2b.getDestination(); 
+               Node sEndNode = new Node(sEnd); 
+               rootNode.addChild(sEndNode);
+            }
+            
+        }
+        Beacon test = rootNode.getBeacon();
+        ArrayList<Node> test1  = rootNode.getChildren();
+        ArrayList<String> test2 = new ArrayList<String>();
+        for(int i = 0; i < test1.size(); i++ ){
+            Node test3 = test1.get(i);
+            Beacon test4 = test3.getBeacon();
+            String test5 = test4.getBeaconId();
+            test2.add(test5);
+        }
+        System.out.println(test.getBeaconId());
+        System.out.println(test2);
+       
     }
     
     
