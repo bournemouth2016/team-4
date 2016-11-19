@@ -79,10 +79,7 @@ public class Beacon {
         }
     
     }
-    
-    
-    
-    
+   
     
     }
     
@@ -104,8 +101,6 @@ public class Beacon {
                 }
                 distances[i] = value;
             }
-            
-         
         }
         
         int index = 0; 
