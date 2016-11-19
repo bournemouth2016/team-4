@@ -17,6 +17,8 @@ public class ZombieKiller extends AppCompatActivity {
     Button travelBtn = (Button) findViewById(R.id.travBtn);
     Button lavatoryBtn = (Button) findViewById(R.id.lavBtn);
     Button receptionBtn = (Button) findViewById(R.id.recepBtn);
+    Button emServBtn = (Button) findViewById(R.id.emServBtn);
+    Button lostBtn = (Button) findViewById(R.id.lostBtn);
 
     locationBtn.setOnClickListener(new View.OnClickListener() {
         @Override
@@ -45,7 +47,24 @@ public class ZombieKiller extends AppCompatActivity {
             // Tell user what to do!
 
         }
+
     });
 
+    emServBtn.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            // Tell user what to do!
 
+        }
+
+    });
+
+    lostBtn.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            // Tell user what to do!
+
+        }
+
+    });
 }

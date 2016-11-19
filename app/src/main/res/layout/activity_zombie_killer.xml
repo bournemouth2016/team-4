@@ -14,46 +14,66 @@
         android:text="LOCATION"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:id="@+id/locBtn"
+        android:contentDescription="LOCATION"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginLeft="14dp"
-        android:layout_marginStart="14dp"
-        android:layout_marginTop="43dp"
-        android:id="@+id/locBtn"
-        android:contentDescription="LOCATION" />
+        android:layout_marginLeft="79dp"
+        android:layout_marginStart="79dp" />
+
+    <Button
+        android:text="Travel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/travBtn"
+        android:contentDescription="Travel to"
+        android:layout_alignBaseline="@+id/locBtn"
+        android:layout_alignBottom="@+id/locBtn"
+        android:layout_toRightOf="@+id/locBtn"
+        android:layout_toEndOf="@+id/locBtn" />
+
+
+    <Button
+        android:text="Lavatory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="41dp"
+        android:id="@+id/lavBtn"
+        android:contentDescription="Lavatory"
+        android:layout_below="@+id/locBtn"
+        android:layout_toLeftOf="@+id/recepBtn"
+        android:layout_toStartOf="@+id/recepBtn" />
 
     <Button
         android:text="RECEPTION"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/recepBtn"
+        android:contentDescription="Go to Reception"
         android:layout_alignBaseline="@+id/lavBtn"
         android:layout_alignBottom="@+id/lavBtn"
-        android:layout_alignLeft="@+id/travBtn"
-        android:layout_alignStart="@+id/travBtn"
-        android:contentDescription="Reception" />
+        android:layout_toRightOf="@+id/locBtn"
+        android:layout_toEndOf="@+id/locBtn" />
 
     <Button
-        android:text="Lavatory"
+        android:text="Emergency Services"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="87dp"
-        android:id="@+id/lavBtn"
-        android:layout_below="@+id/locBtn"
-        android:layout_alignLeft="@+id/locBtn"
-        android:layout_alignStart="@+id/locBtn"
-        android:contentDescription="Lavatory" />
+        android:id="@+id/emServBtn"
+        android:contentDescription="Call Emergency Services"
+        android:layout_marginTop="43dp"
+        android:layout_below="@+id/lostBtn"
+        android:layout_centerHorizontal="true" />
 
     <Button
-        android:text="Travel"
+        android:text="Lost"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginRight="52dp"
-        android:layout_marginEnd="52dp"
-        android:id="@+id/travBtn"
-        android:contentDescription="Travel"
-        android:layout_above="@+id/lavBtn"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:id="@+id/lostBtn"
+        android:contentDescription="I'm lost"
+        android:layout_marginTop="46dp"
+        android:layout_below="@+id/lavBtn"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>
