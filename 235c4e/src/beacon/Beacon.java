@@ -68,7 +68,7 @@ public class Beacon {
     paths.add(path1);
     paths.add(path2);
     //Building Spec End 
-    
+  
     BeaconToBeacon[] best = bestRoute(paths);
     for(int i =0; i < best.length; i++){
         BeaconToBeacon test = best[i];
@@ -87,7 +87,7 @@ public class Beacon {
     }
     
     
-   
+    // converted to string finish
     public static BeaconToBeacon[] bestRoute (ArrayList<BeaconToBeacon[]> paths){
         int[] distances = new int[paths.size()];
         int value = 0;
