@@ -62,55 +62,52 @@ public class Beacon {
     routes.add(corridorAToToilet);
     routes.add(receptionToCorridorB); 
     routes.add(corridorBToToilet);
-    //Tree map of building 
-    
+    BeaconToBeacon[] path1 = {receptionToCorridorA, corridorAToToilet};
+    BeaconToBeacon[] path2 = {receptionToCorridorB, corridorBToToilet};
+    ArrayList<BeaconToBeacon[]> paths = new ArrayList<BeaconToBeacon[]>();
+    paths.add(path1);
+    paths.add(path2);
     //Building Spec End 
     
-    
-    
-    ArrayList<Move> test = receptionToCorridorA.getDirections();
-    for(int i = 0; i < test.size(); i++){
-        Move string = test.get(i);
-        System.out.println(string.getDirection());
-    }
-    
-    
-    
-    }
-    
-    
-    public static void constructTree(Beacon start, Beacon destination, ArrayList<BeaconToBeacon> routes){
-        //Construct Tree 
-        if(start.equals(destination)){
-            return; 
+    BeaconToBeacon[] best = bestRoute(paths);
+    System.out.println(best.length);
+    for(int i =0; i < best.length; i++){
+        BeaconToBeacon test = best[i];
+        ArrayList<Move> test2 = test.getDirections();
+        for(int j = 0; j < test2.size(); j++){
+            Move test3 = test2.get(j);
+            System.out.println("Move " + test3.getDirection() + " at angle " + test3.getAngle() + " " + test3.getSteps() + " steps.");
         }
-
-        Node rootNode = new Node(start);
-        for(int i = 0; i < routes.size(); i++){
-            BeaconToBeacon b2b =  routes.get(i);
-            Beacon sStart = b2b.getStart(); 
-            if(start.equals(sStart)){
-               Beacon sEnd = b2b.getDestination(); 
-               Node sEndNode = new Node(sEnd); 
-               rootNode.addChild(sEndNode);
-            }
+    
+    }
+    
+    
+    
+    
+    
+    }
+    
+    
+   
+    public static BeaconToBeacon[] bestRoute (ArrayList<BeaconToBeacon[]> paths){
+        double[] distances = new double[paths.size()];
+        double value = 0;
+        for(int i = 0; i < paths.size(); i++){
+            distances[i] = value;
+            BeaconToBeacon[] subjectPath  = paths.get(i);
+            value = 0;
+            for(int j = 0; j < subjectPath.length; j++){
+                BeaconToBeacon b2b = subjectPath[j];
+                double distance = b2b.getDistance();
+                value = value + distance;
+            } 
+        }
+        
+        for(int z =0; z < distances.length; z++){
             
         }
-        Beacon test = rootNode.getBeacon();
-        ArrayList<Node> test1  = rootNode.getChildren();
-        ArrayList<String> test2 = new ArrayList<String>();
-        for(int i = 0; i < test1.size(); i++ ){
-            Node test3 = test1.get(i);
-            Beacon test4 = test3.getBeacon();
-            String test5 = test4.getBeaconId();
-            test2.add(test5);
-        }
-        System.out.println(test.getBeaconId());
-        System.out.println(test2);
+        return paths.get(index);
         
-        
-        constructTree(, destination, routes); 
-       
     }
     
     
