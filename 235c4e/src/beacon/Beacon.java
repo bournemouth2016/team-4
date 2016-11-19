@@ -70,13 +70,12 @@ public class Beacon {
     //Building Spec End 
     
     BeaconToBeacon[] best = bestRoute(paths);
-    System.out.println(best.length);
     for(int i =0; i < best.length; i++){
         BeaconToBeacon test = best[i];
         ArrayList<Move> test2 = test.getDirections();
         for(int j = 0; j < test2.size(); j++){
             Move test3 = test2.get(j);
-            System.out.println("Move " + test3.getDirection() + " at angle " + test3.getAngle() + " " + test3.getSteps() + " steps.");
+            System.out.println("Move " + test3.getDirection() + " at angle " + test3.getAngle() + " for " + test3.getSteps() + " steps.");
         }
     
     }
@@ -90,26 +89,37 @@ public class Beacon {
     
    
     public static BeaconToBeacon[] bestRoute (ArrayList<BeaconToBeacon[]> paths){
-        double[] distances = new double[paths.size()];
-        double value = 0;
-        for(int i = 0; i < paths.size(); i++){
-            distances[i] = value;
-            BeaconToBeacon[] subjectPath  = paths.get(i);
-            value = 0;
-            for(int j = 0; j < subjectPath.length; j++){
-                BeaconToBeacon b2b = subjectPath[j];
-                double distance = b2b.getDistance();
-                value = value + distance;
-            } 
-        }
-        
-        for(int z =0; z < distances.length; z++){
+        int[] distances = new int[paths.size()];
+        int value = 0;
+        for(int i = 0;  i < paths.size(); i++){
+            value = 0; 
+            BeaconToBeacon[] path1 = paths.get(i);
+            for(int j = 0; j < path1.length; j++){
+                BeaconToBeacon path2 = path1[j];
+                ArrayList<Move> path3 = path2.getDirections();
+                for(int z = 0; z < path3.size(); z++){
+                    Move path4 = path3.get(z);
+                    int number = path4.getSteps();
+                    value = value + number; 
+                }
+                distances[i] = value;
+            }
             
+         
         }
-        return paths.get(index);
         
-    }
-    
-    
-    
+        int index = 0; 
+        for(int y = 1; y < distances.length; y ++){
+            if(distances[y-1] > distances[y]){
+                index = y;
+            }
+        
+        }
+       return paths.get(index);   
 }
+
+}
+    
+    
+    
+
