@@ -62,11 +62,17 @@ public class Beacon {
     routes.add(corridorAToToilet);
     routes.add(receptionToCorridorB); 
     routes.add(corridorBToToilet);
+    //Tree map of building 
+    
     //Building Spec End 
     
     
     
-    constructTree(reception, toilet, routes);
+    ArrayList<Move> test = receptionToCorridorA.getDirections();
+    for(int i = 0; i < test.size(); i++){
+        Move string = test.get(i);
+        System.out.println(string.getDirection());
+    }
     
     
     
@@ -75,6 +81,10 @@ public class Beacon {
     
     public static void constructTree(Beacon start, Beacon destination, ArrayList<BeaconToBeacon> routes){
         //Construct Tree 
+        if(start.equals(destination)){
+            return; 
+        }
+
         Node rootNode = new Node(start);
         for(int i = 0; i < routes.size(); i++){
             BeaconToBeacon b2b =  routes.get(i);
@@ -97,6 +107,9 @@ public class Beacon {
         }
         System.out.println(test.getBeaconId());
         System.out.println(test2);
+        
+        
+        constructTree(, destination, routes); 
        
     }
     
