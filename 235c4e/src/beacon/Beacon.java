@@ -54,7 +54,28 @@ public class Beacon {
     BeaconToBeacon corridorAToToilet = new BeaconToBeacon(corridor_A, toilet, directionBD);
     BeaconToBeacon receptionToCorridorB = new BeaconToBeacon(reception , corridor_B, directionAC);
     BeaconToBeacon corridorBToToilet = new BeaconToBeacon(corridor_B, toilet, directionCD);
+    ArrayList<BeaconToBeacon> routes = new ArrayList<BeaconToBeacon>();
+    routes.add(receptionToCorridorA); 
+    routes.add(corridorAToToilet);
+    routes.add(receptionToCorridorB); 
+    routes.add(corridorBToToilet);
+    //Building Spec End 
+    
+    
+    
+    
+    
+    
     
     }
+    
+    
+    public static ArrayList<Move> getRoute(Beacon start, Beacon destination){
+        
+        
+           
+    }
+    
+    
     
 }
